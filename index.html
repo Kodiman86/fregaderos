@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fregadero Inteligente HydroSmart 80x45 | Comparativa y Ofertas</title>
-    <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -247,6 +246,12 @@
             border-radius: 50px;
             font-size: 0.8rem;
             font-weight: 600;
+            z-index: 10;
+        }
+
+        .product-badge.best-seller {
+            background: linear-gradient(135deg, #ffd700, #ff8c00);
+            color: var(--dark);
         }
 
         .product-image {
@@ -410,6 +415,55 @@
             box-shadow: var(--shadow);
         }
 
+        /* Features Grid */
+        .features {
+            padding: 100px 20px;
+            background: var(--light);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .feature-card {
+            background: var(--white);
+            padding: 40px 30px;
+            border-radius: 20px;
+            text-align: center;
+            transition: var(--transition);
+            border: 2px solid transparent;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--primary);
+            box-shadow: var(--shadow);
+        }
+
+        .feature-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--primary), #ff8c42);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 25px;
+            font-size: 2rem;
+        }
+
+        .feature-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            color: var(--dark);
+        }
+
+        .feature-card p {
+            color: var(--gray);
+        }
+
         /* CTA Section */
         .cta-final {
             padding: 100px 20px;
@@ -568,7 +622,7 @@
             <div class="hero-content">
                 <span class="hero-badge">🔥 Oferta Limitada</span>
                 <h1>Fregadero Inteligente <span>HydroSmart 80x45</span></h1>
-                <p class="hero-subtitle">Transforma tu Cocina con el Fregadero Inteligente 80x45. Diseño moderno, funcionalidad total y máxima resistencia.</p>
+                <p class="hero-subtitle">Transforma tu Cocina con el Fregadero Inteligente 80x45. Diseño moderno, funcionalidad total y máxima resistencia en acero inoxidable 304.</p>
                 <div class="cta-buttons">
                     <a href="#productos" class="btn-primary" id="comprar">Ver Modelos</a>
                     <a href="#beneficios" class="btn-secondary">Ver Beneficios</a>
@@ -576,6 +630,38 @@
             </div>
             <div class="hero-image">
                 <img src="https://image.qwenlm.ai/public_source/be1a13e5-ea37-4cdf-bd3d-6d01a34f60c5/19a9e95cf-3790-48f7-8f7b-d4591c2b8e0d.png" alt="Fregadero Inteligente HydroSmart 80x45">
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="section-container">
+            <div class="section-header animate-on-scroll">
+                <h2>¿Por qué elegir HydroSmart?</h2>
+                <p>Descubre las ventajas que hacen la diferencia</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card animate-on-scroll">
+                    <div class="feature-icon">⭐</div>
+                    <h3>Acero Premium 304</h3>
+                    <p>Acero inoxidable de grado alimenticio resistente a corrosión, óxido y manchas</p>
+                </div>
+                <div class="feature-card animate-on-scroll">
+                    <div class="feature-icon">⚙️</div>
+                    <h3>Multifuncional</h3>
+                    <p>Sistema integrado con accesorios completos para máxima funcionalidad en tu cocina</p>
+                </div>
+                <div class="feature-card animate-on-scroll">
+                    <div class="feature-icon">✨</div>
+                    <h3>Diseño Moderno</h3>
+                    <p>Estilo elegante tipo piano que complementa cualquier cocina contemporánea</p>
+                </div>
+                <div class="feature-card animate-on-scroll">
+                    <div class="feature-icon">🔧</div>
+                    <h3>Fácil Instalación</h3>
+                    <p>Instalación rápida: sobre encimera, bajo encimera o empotrado. Kit completo incluido</p>
+                </div>
             </div>
         </div>
     </section>
@@ -588,52 +674,55 @@
                 <p>Encuentra el modelo ideal para tu cocina moderna</p>
             </div>
             <div class="products-grid">
-                <!-- Product 1 -->
+                <!-- Product 1 - BEST SELLER -->
                 <div class="product-card animate-on-scroll">
-                    <span class="product-badge">Más Vendido</span>
-                    <img src="https://image.qwenlm.ai/public_source/be1a13e5-ea37-4cdf-bd3d-6d01a34f60c5/19a9e95cf-3790-48f7-8f7b-d4591c2b8e0d.png" alt="Modelo Cascada 80x45" class="product-image">
+                    <span class="product-badge best-seller">🏆 Más Vendido</span>
+                    <img src="https://image.qwenlm.ai/public_source/be1a13e5-ea37-4cdf-bd3d-6d01a34f60c5/19a9e95cf-3790-48f7-8f7b-d4591c2b8e0d.png" alt="Modelo Pantalla Digital" class="product-image">
                     <div class="product-content">
-                        <h3>Modelo Cascada 80x45</h3>
-                        <p>Incluye accesorios completos y sistema cascada.</p>
+                        <h3>Modelo Pantalla Digital</h3>
+                        <p>Acero inoxidable 304 con pantalla LED y control digital de temperatura.</p>
                         <ul class="product-features">
-                            <li>Acero Inoxidable 304</li>
-                            <li>Sistema Cascada</li>
-                            <li>Accesorios Completos</li>
-                            <li>Fácil Instalación</li>
+                            <li>Pantalla LED temperatura en tiempo real</li>
+                            <li>Acero Inoxidable 304 (3mm)</li>
+                            <li>Sistema Cascada y Lluvia</li>
+                            <li>Grifo extraíble 360°</li>
+                            <li>Kit completo de accesorios</li>
                         </ul>
-                        <a href="LINK1" target="_blank" class="btn-primary" style="width: 100%; text-align: center;">Ver Precio</a>
+                        <a href="https://articulo.mercadolibre.com.mx/MLM-2263521321-fregadero-de-cocina-inteligente-con-pantalla-digital-8045-_JM" target="_blank" class="btn-primary" style="width: 100%; text-align: center;">Ver Precio</a>
                     </div>
                 </div>
 
                 <!-- Product 2 -->
                 <div class="product-card animate-on-scroll">
-                    <img src="https://image.qwenlm.ai/public_source/be1a13e5-ea37-4cdf-bd3d-6d01a34f60c5/19a9e95cf-3790-48f7-8f7b-d4591c2b8e0d.png" alt="Modelo Pantalla Digital" class="product-image">
+                    <img src="https://image.qwenlm.ai/public_source/be1a13e5-ea37-4cdf-bd3d-6d01a34f60c5/19a9e95cf-3790-48f7-8f7b-d4591c2b8e0d.png" alt="Modelo Cascada 80x45" class="product-image">
                     <div class="product-content">
-                        <h3>Modelo Pantalla Digital</h3>
-                        <p>Acero inoxidable 304 con control digital.</p>
+                        <h3>Modelo Cascada 80x45</h3>
+                        <p>Incluye accesorios completos y sistema cascada con botones tipo piano.</p>
                         <ul class="product-features">
-                            <li>Acero Inoxidable 304</li>
-                            <li>Pantalla Digital</li>
+                            <li>Botones tipo piano (4 teclas)</li>
+                            <li>Acero Inoxidable 304 (4mm)</li>
                             <li>Sistema Cascada</li>
-                            <li>Accesorios Incluidos</li>
+                            <li>Drenaje lateral ahorrador</li>
+                            <li>Accesorios Completos</li>
                         </ul>
-                        <a href="LINK2" target="_blank" class="btn-primary" style="width: 100%; text-align: center;">Ver Precio</a>
+                        <a href="https://articulo.mercadolibre.com.mx/MLM-2295876383-tarja-fregadero-de-cocina-inoxidable-304-cascada-acero-80x45-_JM" target="_blank" class="btn-primary" style="width: 100%; text-align: center;">Ver Precio</a>
                     </div>
                 </div>
 
                 <!-- Product 3 -->
                 <div class="product-card animate-on-scroll">
-                    <img src="https://image.qwenlm.ai/public_source/be1a13e5-ea37-4cdf-bd3d-6d01a34f60c5/19a9e95cf-3790-48f7-8f7b-d4591c2b8e0d.png" alt="Modelo Negro Mate" class="product-image">
+                    <img src="https://image.qwenlm.ai/public_source/be1a13e5-ea37-4cdf-bd3d-6d01a34f60c5/19a9e95cf-3790-48f7-8f7b-d4591c2b8e0d.png" alt="Modelo Negro Mate MOHSOE" class="product-image">
                     <div class="product-content">
-                        <h3>Modelo Negro Mate</h3>
-                        <p>Diseño premium resistente a rayones.</p>
+                        <h3>Modelo Negro Mate MOHSOE</h3>
+                        <p>Diseño premium resistente a rayones con acabado negro mate sofisticado.</p>
                         <ul class="product-features">
-                            <li>Acero Inoxidable 304</li>
-                            <li>Acabado Negro Mate</li>
+                            <li>Acabado Negro Mate Premium</li>
+                            <li>Acero Inoxidable 304 (4mm)</li>
                             <li>Resistente a Rayones</li>
-                            <li>Diseño Premium</li>
+                            <li>Tecnología Antimanchas</li>
+                            <li>Kit Completo Instalación</li>
                         </ul>
-                        <a href="LINK9" target="_blank" class="btn-primary" style="width: 100%; text-align: center;">Ver Precio</a>
+                        <a href="https://www.mercadolibre.com.mx/tarja-fregadero-mohsoe-80x45x22-cm-negro-mate-acero-inoxidable-304-kit-completo-instalacion-sobreponer-al-ras-submontar-resistente-al-desgaste/p/MLM65036275" target="_blank" class="btn-primary" style="width: 100%; text-align: center;">Ver Precio</a>
                     </div>
                 </div>
             </div>
@@ -653,7 +742,8 @@
                         <tr>
                             <th>Modelo</th>
                             <th>Material</th>
-                            <th>Pantalla</th>
+                            <th>Espesor</th>
+                            <th>Pantalla LED</th>
                             <th>Cascada</th>
                             <th>Accesorios</th>
                         </tr>
@@ -662,6 +752,7 @@
                         <tr>
                             <td><strong>Pantalla Digital</strong></td>
                             <td>Acero 304</td>
+                            <td>3mm</td>
                             <td><span class="check">✔</span></td>
                             <td><span class="check">✔</span></td>
                             <td><span class="check">✔</span></td>
@@ -669,13 +760,15 @@
                         <tr>
                             <td><strong>Cascada 80x45</strong></td>
                             <td>Acero 304</td>
-                            <td><span class="cross">✖</span></td>
+                            <td>4mm</td>
+                            <td><span class="check">✔</span></td>
                             <td><span class="check">✔</span></td>
                             <td><span class="check">✔</span></td>
                         </tr>
                         <tr>
                             <td><strong>Negro Mate</strong></td>
                             <td>Acero 304</td>
+                            <td>4mm</td>
                             <td><span class="cross">✖</span></td>
                             <td><span class="check">✔</span></td>
                             <td><span class="check">✔</span></td>
@@ -700,19 +793,27 @@
                 <ul class="benefits-list">
                     <li>
                         <div class="check-icon">✓</div>
-                        <span>Acero inoxidable de alta calidad</span>
+                        <span>Acero inoxidable 304 de alta calidad</span>
                     </li>
                     <li>
                         <div class="check-icon">✓</div>
-                        <span>Sistema multifuncional integrado</span>
+                        <span>Pantalla LED temperatura en tiempo real (sin baterías)</span>
                     </li>
                     <li>
                         <div class="check-icon">✓</div>
-                        <span>Diseño elegante y moderno</span>
+                        <span>Sistema cascada y múltiples modos de agua</span>
                     </li>
                     <li>
                         <div class="check-icon">✓</div>
-                        <span>Fácil instalación</span>
+                        <span>Kit completo con todos los accesorios</span>
+                    </li>
+                    <li>
+                        <div class="check-icon">✓</div>
+                        <span>Instalación versátil (sobre, bajo o empotrado)</span>
+                    </li>
+                    <li>
+                        <div class="check-icon">✓</div>
+                        <span>Garantía del vendedor: 60 días</span>
                     </li>
                 </ul>
                 <a href="#productos" class="btn-primary" style="margin-top: 30px;">Elige tu Modelo</a>
@@ -737,6 +838,7 @@
     <!-- Footer -->
     <footer>
         <p>&copy; 2024 HydroSmart. Todos los derechos reservados.</p>
+        <p style="margin-top: 10px; font-size: 0.9rem;">Los enlaces dirigen a Mercado Libre. Precios y disponibilidad sujetos a cambio.</p>
     </footer>
 
     <script>
