@@ -1,85 +1,650 @@
+
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Comparativa Fregaderos Inteligentes 80x45</title>
-<link rel="stylesheet" href="/fregaderos/style.css">
+<style>
+body {
+background-color: white; /* Ensure the iframe has a white background */
+                }
+                * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary: #ff6a00;
+    --primary-dark: #e55b00;
+    --dark: #222222;
+    --light: #f5f5f5;
+    --white: #ffffff;
+    --gray: #666666;
+    --shadow: 0 10px 40px rgba(0,0,0,0.1);
+    --transition: all 0.3s ease;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: var(--light);
+    color: var(--dark);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* Header */
+header {
+    background: var(--white);
+    padding: 20px 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 20px rgba(0,0,0,0.05);
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary);
+}
+
+.logo span {
+    color: var(--dark);
+}
+
+.nav-btn {
+    background: var(--primary);
+    color: var(--white);
+    padding: 12px 25px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: var(--transition);
+}
+
+.nav-btn:hover {
+    background: var(--primary-dark);
+    transform: translateY(-2px);
+}
+
+/* Hero Section */
+.hero {
+    padding: 140px 20px 80px;
+    background: linear-gradient(135deg, var(--white) 0%, #f0f0f0 100%);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+}
+
+.hero-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.hero-content {
+    animation: fadeInLeft 1s ease;
+}
+
+.hero-badge {
+    display: inline-block;
+    background: linear-gradient(135deg, var(--primary), #ff8c42);
+    color: var(--white);
+    padding: 8px 20px;
+    border-radius: 50px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+    animation: pulse 2s infinite;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    line-height: 1.2;
+    margin-bottom: 20px;
+    color: var(--dark);
+}
+
+.hero h1 span {
+    color: var(--primary);
+}
+
+.hero-subtitle {
+    font-size: 1.2rem;
+    color: var(--gray);
+    margin-bottom: 30px;
+}
+
+.hero-image {
+    animation: fadeInRight 1s ease;
+    position: relative;
+}
+
+.hero-image img {
+    width: 100%;
+    max-width: 600px;
+    border-radius: 20px;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+}
+
+.hero-image img:hover {
+    transform: scale(1.02);
+}
+
+.cta-buttons {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.btn-primary {
+    display: inline-block;
+    padding: 16px 35px;
+    background: linear-gradient(135deg, var(--primary), #ff8c42);
+    color: var(--white);
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 50px;
+    transition: var(--transition);
+    box-shadow: 0 5px 20px rgba(255, 106, 0, 0.3);
+}
+
+.btn-primary:hover {
+    background: linear-gradient(135deg, var(--primary-dark), #e57a00);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 30px rgba(255, 106, 0, 0.4);
+}
+
+.btn-secondary {
+    display: inline-block;
+    padding: 16px 35px;
+    background: var(--white);
+    color: var(--dark);
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 50px;
+    transition: var(--transition);
+    border: 2px solid var(--dark);
+}
+
+.btn-secondary:hover {
+    background: var(--dark);
+    color: var(--white);
+    transform: translateY(-3px);
+}
+
+/* Features Section */
+.features {
+    padding: 100px 20px;
+    background: var(--white);
+}
+
+.section-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.section-header h2 {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+    color: var(--dark);
+}
+
+.section-header p {
+    color: var(--gray);
+    font-size: 1.1rem;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.feature-card {
+    background: var(--light);
+    padding: 40px 30px;
+    border-radius: 20px;
+    text-align: center;
+    transition: var(--transition);
+    border: 2px solid transparent;
+}
+
+.feature-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--primary);
+    box-shadow: var(--shadow);
+}
+
+.feature-icon {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, var(--primary), #ff8c42);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 25px;
+    font-size: 2rem;
+}
+
+.feature-card h3 {
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+    color: var(--dark);
+}
+
+.feature-card p {
+    color: var(--gray);
+}
+
+/* Benefits Section */
+.benefits {
+    padding: 100px 20px;
+    background: linear-gradient(135deg, #f8f8f8 0%, #e8e8e8 100%);
+}
+
+.benefits-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.benefits-list {
+    list-style: none;
+}
+
+.benefits-list li {
+    display: flex;
+    align-items: center;
+    padding: 20px 0;
+    border-bottom: 1px solid #ddd;
+    animation: fadeInUp 0.5s ease;
+    animation-fill-mode: both;
+}
+
+.benefits-list li:nth-child(1) { animation-delay: 0.1s; }
+.benefits-list li:nth-child(2) { animation-delay: 0.2s; }
+.benefits-list li:nth-child(3) { animation-delay: 0.3s; }
+.benefits-list li:nth-child(4) { animation-delay: 0.4s; }
+
+.check-icon {
+    width: 30px;
+    height: 30px;
+    background: var(--primary);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--white);
+    margin-right: 15px;
+    flex-shrink: 0;
+}
+
+.benefits-list li span {
+    font-size: 1.1rem;
+    color: var(--dark);
+}
+
+.benefits-image img {
+    width: 100%;
+    border-radius: 20px;
+    box-shadow: var(--shadow);
+}
+
+/* CTA Section */
+.cta-final {
+    padding: 100px 20px;
+    background: linear-gradient(135deg, var(--dark) 0%, #333 100%);
+    color: var(--white);
+    text-align: center;
+}
+
+.cta-final h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.cta-final p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    opacity: 0.9;
+}
+
+.timer {
+    display: inline-block;
+    background: rgba(255,255,255,0.1);
+    padding: 20px 40px;
+    border-radius: 15px;
+    margin-bottom: 30px;
+}
+
+.timer-text {
+    font-size: 1rem;
+    margin-bottom: 10px;
+    opacity: 0.8;
+}
+
+.timer-countdown {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--primary);
+}
+
+/* Footer */
+footer {
+    background: #111;
+    color: var(--white);
+    padding: 40px 20px;
+    text-align: center;
+}
+
+footer p {
+    opacity: 0.7;
+}
+
+/* Animations */
+@keyframes fadeInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInRight {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .hero-container,
+    .benefits-container {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .section-header h2,
+    .cta-final h2 {
+        font-size: 2rem;
+    }
+
+    .cta-buttons {
+        justify-content: center;
+    }
+
+    .nav-container {
+        flex-direction: column;
+        gap: 15px;
+    }
+}
+
+/* Scroll Animation */
+.animate-on-scroll {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.6s ease;
+}
+
+.animate-on-scroll.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+              </style>
+                        </head>
+                        <body>
+                            <!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fregadero Inteligente HydroSmart 80x45 | Transforma tu Cocina</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
-
 <body>
+    <!-- Header -->
+    <header>
+        <div class="nav-container">
+            <div class="logo">Hydro<span>Smart</span></div>
+            <a href="#comprar" class="nav-btn">Comprar Ahora</a>
+        </div>
+    </header>
 
-<header class="topbar">
-  <h1>Comparativa de Fregaderos Inteligentes 80x45</h1>
-  <p>Encuentra el modelo ideal para tu cocina moderna</p>
-</header>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <span class="hero-badge">🔥 Oferta Limitada</span>
+                <h1>Fregadero Inteligente <span>HydroSmart 80x45</span></h1>
+                <p class="hero-subtitle">Transforma tu Cocina con el Fregadero Inteligente 80x45. Diseño moderno, funcionalidad total y máxima resistencia.</p>
+                <div class="cta-buttons">
+                    <a href="https://www.mercadolibre.com" target="_blank" class="btn-primary" id="comprar">Comprar en Mercado Libre</a>
+                    <a href="#beneficios" class="btn-secondary">Ver Beneficios</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="https://image.qwenlm.ai/public_source/be1a13e5-ea37-4cdf-bd3d-6d01a34f60c5/19a9e95cf-3790-48f7-8f7b-d4591c2b8e0d.png" alt="Fregadero Inteligente HydroSmart 80x45">
+            </div>
+        </div>
+    </section>
 
-<section class="productos">
+    <!-- Features Section -->
+    <section class="features">
+        <div class="section-container">
+            <div class="section-header animate-on-scroll">
+                <h2>¿Por qué elegir HydroSmart?</h2>
+                <p>Descubre las ventajas que hacen la diferencia</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card animate-on-scroll">
+                    <div class="feature-icon">⭐</div>
+                    <h3>Acero Premium</h3>
+                    <p>Acero inoxidable de alta calidad resistente a corrosión y manchas</p>
+                </div>
+                <div class="feature-card animate-on-scroll">
+                    <div class="feature-icon">⚙️</div>
+                    <h3>Multifuncional</h3>
+                    <p>Sistema integrado con accesorios para máxima funcionalidad</p>
+                </div>
+                <div class="feature-card animate-on-scroll">
+                    <div class="feature-icon">✨</div>
+                    <h3>Diseño Moderno</h3>
+                    <p>Estilo elegante que complementa cualquier cocina contemporánea</p>
+                </div>
+                <div class="feature-card animate-on-scroll">
+                    <div class="feature-icon">🔧</div>
+                    <h3>Fácil Instalación</h3>
+                    <p>Instalación rápida y sencilla con instrucciones incluidas</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <div class="card">
-    <h2>Modelo Pantalla Digital</h2>
-    <p>Acero inoxidable 304 con control digital.</p>
-    <a href="LINK2" target="_blank" class="btn">Ver Precio</a>
-  </div>
+    <!-- Benefits Section -->
+    <section class="benefits" id="beneficios">
+        <div class="benefits-container">
+            <div class="benefits-image animate-on-scroll">
+                <img src="https://image.qwenlm.ai/public_source/be1a13e5-ea37-4cdf-bd3d-6d01a34f60c5/19a9e95cf-3790-48f7-8f7b-d4591c2b8e0d.png" alt="Fregadero HydroSmart Beneficios">
+            </div>
+            <div class="benefits-content animate-on-scroll">
+                <div class="section-header" style="text-align: left; margin-bottom: 30px;">
+                    <h2>Beneficios Exclusivos</h2>
+                    <p>Todo lo que necesitas en un solo producto</p>
+                </div>
+                <ul class="benefits-list">
+                    <li>
+                        <div class="check-icon">✓</div>
+                        <span>Acero inoxidable de alta calidad</span>
+                    </li>
+                    <li>
+                        <div class="check-icon">✓</div>
+                        <span>Sistema multifuncional integrado</span>
+                    </li>
+                    <li>
+                        <div class="check-icon">✓</div>
+                        <span>Diseño elegante y moderno</span>
+                    </li>
+                    <li>
+                        <div class="check-icon">✓</div>
+                        <span>Fácil instalación y mantenimiento</span>
+                    </li>
+                </ul>
+                <a href="https://www.mercadolibre.com" target="_blank" class="btn-primary" style="margin-top: 30px;">Comprar Ahora</a>
+            </div>
+        </div>
+    </section>
 
-  <div class="card destacado">
-    <span class="badge">Más Vendido</span>
-    <h2>Modelo Cascada 80x45</h2>
-    <p>Incluye accesorios completos y sistema cascada.</p>
-    <a href="LINK1" target="_blank" class="btn">Ver Precio</a>
-  </div>
+    <!-- CTA Final Section -->
+    <section class="cta-final">
+        <div class="section-container">
+            <h2 class="animate-on-scroll">¡Oferta por Tiempo Limitado!</h2>
+            <p class="animate-on-scroll">No pierdas esta oportunidad única de transformar tu cocina</p>
+            <div class="timer animate-on-scroll">
+                <div class="timer-text">La oferta termina en:</div>
+                <div class="timer-countdown" id="countdown">23:59:59</div>
+            </div>
+            <br>
+            <a href="https://www.mercadolibre.com" target="_blank" class="btn-primary animate-on-scroll">Comprar en Mercado Libre</a>
+        </div>
+    </section>
 
-  <div class="card">
-    <h2>Modelo Negro Mate</h2>
-    <p>Diseño premium resistente a rayones.</p>
-    <a href="LINK9" target="_blank" class="btn">Ver Precio</a>
-  </div>
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 HydroSmart. Todos los derechos reservados.</p>
+    </footer>
 
-</section>
-
-<section class="comparativa">
-  <h2>Tabla Comparativa</h2>
-
-  <table>
-    <tr>
-      <th>Modelo</th>
-      <th>Material</th>
-      <th>Pantalla</th>
-      <th>Cascada</th>
-      <th>Accesorios</th>
-    </tr>
-
-    <tr>
-      <td>Pantalla Digital</td>
-      <td>Acero 304</td>
-      <td>✔</td>
-      <td>✔</td>
-      <td>✔</td>
-    </tr>
-
-    <tr>
-      <td>Cascada 80x45</td>
-      <td>Acero 304</td>
-      <td>✖</td>
-      <td>✔</td>
-      <td>✔</td>
-    </tr>
-
-    <tr>
-      <td>Negro Mate</td>
-      <td>Acero 304</td>
-      <td>✖</td>
-      <td>✔</td>
-      <td>✔</td>
-    </tr>
-
-  </table>
-</section>
-
-<section class="cta-final">
-  <h2>Elige tu modelo ideal hoy mismo</h2>
-  <p>Stock y precios pueden cambiar en cualquier momento.</p>
-</section>
-
+    <script src="script.js"></script>
 </body>
 </html>
+
+
+
+              <script>
+                              // Countdown Timer
+function startCountdown() {
+    let totalSeconds = 24 * 60 * 60; // 24 hours
+    
+    function updateTimer() {
+        const hours = Math.floor(totalSeconds / 3600);
+        const minutes = Math.floor((totalSeconds % 3600) / 60);
+        const seconds = totalSeconds % 60;
+        
+        document.getElementById('countdown').textContent = 
+            `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+        
+        if (totalSeconds > 0) {
+            totalSeconds--;
+        } else {
+            totalSeconds = 24 * 60 * 60; // Reset
+        }
+    }
+    
+    updateTimer();
+    setInterval(updateTimer, 1000);
+}
+
+// Scroll Animation
+function initScrollAnimation() {
+    const elements = document.querySelectorAll('.animate-on-scroll');
+    
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
+    }, {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    });
+    
+    elements.forEach(el => observer.observe(el));
+}
+
+// Smooth Scroll
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+            target.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+        }
+    });
+});
+
+// Initialize
+document.addEventListener('DOMContentLoaded', () => {
+    startCountdown();
+    initScrollAnimation();
+});
+
+
+              </script>
+                        </body>
+                        </html>
+                    
